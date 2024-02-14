@@ -6,7 +6,8 @@ export const resolvers: Resolvers = {
     tracksForHome: (_, __, { dataSources }) => {
       return dataSources.trackAPI.getTracksForHome();
     },
-    track: (parent, {id}, {dataSources}, info) => {
+    // Get a single track by ID, for the track page
+    track: (_, { id }, { dataSources }) => {
       return dataSources.trackAPI.getTrack(id);
     },
   },
